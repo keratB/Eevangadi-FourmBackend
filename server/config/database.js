@@ -15,6 +15,7 @@ require("dotenv").config();
 const pool = mysql.createConnection(process.env.DATABASE_URL);
 
 console.log("Connected to PlanetScale!");
+
 let registration = `CREATE TABLE if not exists registration(
     user_id int auto_increment,
     user_name varchar(255) not null,
