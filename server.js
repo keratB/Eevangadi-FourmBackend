@@ -3,7 +3,7 @@ const pool = require("./server/config/database");
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 80;
 const userRouter = require("./server/api/users/user.router");
 const questionRouter = require("./server/api/questions/question.router");
 const answerRouter = require("./server/api/answers/answer.router");
@@ -18,4 +18,4 @@ app.use("/", userRouter);
 app.use("/api/questions", questionRouter);
 app.use("/api/answer", answerRouter);
 
-app.listen(port, () => console.log(`Listening at http://localhost:${port}`));
+app.listen(port,"0.0.0.0",() => console.log(`Listening at http://localhost:${port}`));
